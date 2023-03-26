@@ -241,7 +241,7 @@ impl Resolver {
 
 impl<'x> AuthenticatedMessage<'x> {
     // Returns a vector representing the canonicalized headers, and the signed + hashed canonicalized headers
-    pub async fn get_canonicalized_header(&self) -> Result<(Vec<u8>, &[u8]), Error> {
+    pub fn get_canonicalized_header(&self) -> Result<(Vec<u8>, &[u8]), Error> {
         // Based on verify_dkim_ function
         // Validate DKIM headers
         let mut data = Vec::with_capacity(256);
